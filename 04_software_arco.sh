@@ -2,32 +2,37 @@
 #*******************************************************************************
 # Author            : Indi
 # Github            : https://github.com/IndiSukka
-# Use               : Install basic fonts
+# Use               : Install Arco linux repo packages
 #*******************************************************************************
 
 # Function to install the packages if not already installed
 func_install() {
     if pacman -Qi $1 &> /dev/null; then
-        tput setaf 2
-        echo "The package " $1 "is already installed"
-        echo ""
+        tput setaf 2;echo "The package " $1 "is already installed";echo ""
         tput sgr0
 
     else
-        tput setaf 3
-        echo "Installing package: "$1
-        tput sgr0
-        sudo pacman -S --noconfirm --needed $1
-        echo "" 
+        tput setaf 3;echo "Installing package: "$1;tput sgr0
+        sudo pacman -S --noconfirm --needed $1;
+        echo ""
     fi
 }
 
 # List of programs to install
 list=(
-    ttf-carlito
-    ttf-dejavu
-    ttf-opensans
-    ttf-ubuntu-font-family
+    appimagelauncher
+    archlinux-logout-git
+    brave-bin
+    downgrade
+    mintstick-git
+    nwg-look-bin
+    obmenu-generator
+    pamac-gtk
+    papirus-folders
+    slimbookbattery
+    sublime-text-4
+    telegram-desktop-bin
+    thunar-extended
 )
 
 count=0
@@ -39,7 +44,4 @@ for name in "${list[@]}" ; do
     func_install $name
 done
 
-tput setaf 4;
-echo "************************************************************"
-echo "**********     Packages have been installed     ************"
-tput sgr0
+tput setaf 4;echo "";echo "Packages have been installed";tput sgr0

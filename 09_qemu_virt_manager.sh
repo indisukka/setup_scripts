@@ -1,15 +1,13 @@
 #!/bin/bash
 #########################################################################################
 # Author            : Indi
-# Copied from       : Erik Dubois (https://www.erikdubois.be)
 # Github            : https://github.com/IndiSukka
 # Use               : Installing qemu and virt manager
 #########################################################################################
 
 # Removing iptables
 sudo pacman -Rdd iptables --noconfirm
-sudo pacman -S --noconfirm --needed qemu iptables-nft libvirt  bridge-utils virt-viewer spice-vdagent virt-manager xf86-video-qxl vde2 dnsmasq dmidecode
-sudo pacman -S --noconfirm --needed  ebtables 
+sudo pacman -S --noconfirm --needed qemu iptables-nft libvirt virt-manager edk2-ovmf
 
 # Enabling libvirt service
 sudo systemctl enable libvirtd.service
@@ -22,6 +20,6 @@ read -p "Enter your user id :: " choice
 sudo gpasswd -a $choice libvirt
 sudo gpasswd -a $choice kvm
 
-echo "added user to libvirt and kvm groups"
+echo "Added user to libvirt and kvm groups"
 
-echo "Reboot System Now"
+echo "REBOOT SYSTEM NOW"

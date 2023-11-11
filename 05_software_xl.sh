@@ -2,29 +2,28 @@
 #*******************************************************************************
 # Author            : Indi
 # Github            : https://github.com/IndiSukka
-# Use               : Install laptop specific packages
+# Use               : Install large non-essential packages from arch and arco repos
 #*******************************************************************************
 
 # Function to install the packages if not already installed
 func_install() {
     if pacman -Qi $1 &> /dev/null; then
-        tput setaf 2
-        echo "The package " $1 "is already installed"
-        echo ""
+        tput setaf 2;echo "The package " $1 "is already installed";echo ""
         tput sgr0
 
     else
-        tput setaf 3
-        echo "Installing package: "$1
-        tput sgr0
-        sudo pacman -S --noconfirm --needed $1
-        echo "" 
+        tput setaf 3;echo "Installing package: "$1;tput sgr0
+        sudo pacman -S --noconfirm --needed $1;
+        echo ""
     fi
 }
 
 # List of programs to install
 list=(
-    tlp
+    0ad
+    discord_arch_electron
+    intellij-idea-community-edition
+    spotify
 )
 
 count=0
@@ -36,7 +35,4 @@ for name in "${list[@]}" ; do
     func_install $name
 done
 
-tput setaf 4;
-echo "************************************************************"
-echo "**********     Packages have been installed     ************"
-tput sgr0
+tput setaf 4;echo "";echo "Packages have been installed";tput sgr0
