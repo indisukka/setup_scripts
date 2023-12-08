@@ -17,8 +17,8 @@ sudo systemctl start libvirtd.service
 echo "User needs to be added to libvirt and kvm group"
 read -p "Enter your user id :: " choice
 
-sudo gpasswd -a $choice libvirt
-sudo gpasswd -a $choice kvm
+sudo gpasswd -a "$choice" libvirt
+sudo gpasswd -a "$choice" kvm
 
 echo "Added user to libvirt and kvm groups"
 
