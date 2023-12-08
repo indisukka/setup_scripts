@@ -40,7 +40,7 @@ list=(
 count=0
 
 for name in "${list[@]}" ; do
-    count=$[count+1]
+    count=$((count+1))
     tput setaf 3;echo "Uninstalling package no."$count "::" $name;tput sgr0;
     func_uninstall $name
 done
