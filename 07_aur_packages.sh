@@ -27,11 +27,11 @@ list=(
 
 count=0
 for name in "${list[@]}" ; do
-    count=$[count+1]
+    count=$((count+1))
     tput setaf 6;
-    echo "Installing package nr.  "$count " :: " $name;
+    echo "Installing package no. $count :: " "$name";
     tput sgr0;
-    func_install $name
+    func_install "$name"
 done
 
 tput setaf 4;echo "";echo "Packages have been installed";tput sgr0
