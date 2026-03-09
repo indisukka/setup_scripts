@@ -20,12 +20,14 @@ func_install() {
 
 # List of programs to install
 list=(
+    age
     blueman
     bluez
     bluez-libs
     bluez-utils
     chezmoi
     git
+    grim
     kitty
     labwc
     neovim

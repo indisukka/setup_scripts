@@ -13,7 +13,7 @@ func_install() {
 
     else
         tput setaf 3;echo "Installing package: "$1;tput sgr0
-        sudo yay -S $1;
+        yay -S $1;
         echo ""
     fi
 }
@@ -28,11 +28,11 @@ list=(
     pfetch-rs-bin
     sfwbar
     slimbookbattery
-    spicetify
     spotify
+    spicetify-cli
     sublime-text-4
-    thunar-extended
     vscode
+    zen-browser-bin
 )
 
 count=0

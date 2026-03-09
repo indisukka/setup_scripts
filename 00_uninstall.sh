@@ -32,4 +32,4 @@ for name in "${list[@]}" ; do
     func_uninstall $name
 done
 
-tput setaf 5;echo "";echo "Software has been un-installed";tput sgr0
+tput setaf 5;echo "";echo "Software has been uninstalled";tput sgr0

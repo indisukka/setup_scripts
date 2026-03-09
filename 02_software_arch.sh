@@ -56,6 +56,7 @@ list=(
     thunar-archive-plugin
     thunar-shares-plugin
     thunar-volman
+    trash-cli
     tldr
     ttf-liberation
     ttf-nerd-fonts-symbols

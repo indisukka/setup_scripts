@@ -20,8 +20,11 @@ func_install() {
 # List of programs to install
 list=(
     0ad
+    chromium
     discord
     intellij-idea-community-edition
+    vivaldi
+    vivaldi-ffmpeg-codecs
 )
 
 count=0
