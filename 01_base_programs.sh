@@ -2,7 +2,7 @@
 #*******************************************************************************
 # Author            : Indi
 # Github            : https://github.com/IndiSukka
-# Use               : Install display manager,desktop,bars and sound
+# Use               : Install critical packages
 #*******************************************************************************
 
 # Function to install the packages if not already installed
@@ -20,18 +20,33 @@ func_install() {
 
 # List of programs to install
 list=(
-    xfce4
-    openbox
-    sddm
-    tint2
-    picom
-    network-manager-applet
+    blueman
+    bluez
+    bluez-libs
+    bluez-utils
+    chezmoi
+    git
+    kitty
+    labwc
+    neovim
+    nwg-look
+    p7zip
+    pavucontrol
+    pcmanfm-gtk3
     pipewire
-    wireplumber
     pipewire-alsa
     pipewire-jack
     pipewire-pulse
-    volumeicon
+    sddm
+    waybar
+    wireplumber
+    wlogout
+    xfce4
+    lz4
+    firefox
+    gtklock
+    unrar
+    unzip
 )
 
 count=0
@@ -44,9 +59,6 @@ for name in "${list[@]}" ; do
 done
 
 tput setaf 4;echo "";echo "Packages have been installed";tput sgr0
-
 tput setaf 3;echo "Enabling sddm service";tput sgr0;
-
 sudo systemctl enable sddm.service
-
 tput setaf 2;echo "sddm service enabled";tput sgr0;
