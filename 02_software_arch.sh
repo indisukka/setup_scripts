@@ -62,6 +62,12 @@ list=(
     ttf-nerd-fonts-symbols-common
     wpaperd
     xarchiver
+    xfce4-battery-plugin
+    xfce4-clipman-plugin
+    xfce4-notifyd
+    xfce4-pulseaudio-plugin
+    xfce4-wavelan-plugin
+    xfce4-whiskermenu-plugin
     yt-dlp
 
 )
