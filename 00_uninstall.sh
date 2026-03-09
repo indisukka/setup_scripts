@@ -17,24 +17,11 @@ func_uninstall() {
 
 # List of programs to install
 list=(
-    adobe-source-han-sans-cn-fonts
-    adobe-source-han-sans-jp-fonts
-    adobe-source-han-sans-kr-fonts
-    arcolinux-alacritty-git
-    arcolinux-neofetch-git
-    arcolinux-paru-git
-    arcolinux-sddm-simplicity-git
-    noto-fonts
-    urxvt-fullscreen
-    urxvt-perls
-    urxvt-resize-font-git
-    rxvt-unicode
-    rxvt-unicode-terminfo
-    sardi-icons
-    surfn-icons-git
-    ttf-hack
+    btrfs-progs
+    nano
     vim
-    micro
+    ttf-opensans
+    xterm
 )
 
 count=0

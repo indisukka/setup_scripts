@@ -2,7 +2,7 @@
 #*******************************************************************************
 # Author            : Indi
 # Github            : https://github.com/IndiSukka
-# Use               : Install Arco linux repo packages
+# Use               : Install large non-essential packages from arch repos
 #*******************************************************************************
 
 # Function to install the packages if not already installed
@@ -17,22 +17,11 @@ func_install() {
         echo ""
     fi
 }
-
 # List of programs to install
 list=(
-    appimagelauncher
-    archlinux-logout-git
-    brave-bin
-    downgrade
-    mintstick-git
-    nwg-look-bin
-    obmenu-generator
-    pamac-gtk
-    papirus-folders
-    slimbookbattery
-    sublime-text-4
-    telegram-desktop-bin
-    thunar-extended
+    0ad
+    discord
+    intellij-idea-community-edition
 )
 
 count=0

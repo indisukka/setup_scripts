@@ -2,7 +2,7 @@
 #*******************************************************************************
 # Author            : Indi
 # Github            : https://github.com/IndiSukka
-# Use               : Install AUR packages
+# Use               : Install geenral packages, non crtical
 #*******************************************************************************
 
 # Function to install the packages if not already installed
@@ -20,8 +20,50 @@ func_install() {
 
 # List of programs to install
 list=(
-    eclipse-java
-    notesnook-bin
+    android-tools
+    autorandr
+    bat
+    bitwarden
+    doas
+    eza
+    feh
+    fish
+    flameshot
+    flatpak
+    font-manager
+    gthumb
+    hexchat
+    kanshi
+    kvantum-theme-materia
+    kvantum-theme-orchis-git
+    libreoffice-fresh
+    mako
+    materia-gtk-theme
+    mediainfo-gui
+    megasync-bin
+    meld
+    mpv
+    ncspot
+    papirus-icon-theme
+    picard
+    ranger
+    ripgrep
+    rofi
+    samba
+    starship
+    telegram-desktop
+    terminus-font
+    thunar-archive-plugin
+    thunar-shares-plugin
+    thunar-volman
+    tldr
+    ttf-liberation
+    ttf-nerd-fonts-symbols
+    ttf-nerd-fonts-symbols-common
+    wpaperd
+    xarchiver
+    yt-dlp
+
 )
 
 count=0

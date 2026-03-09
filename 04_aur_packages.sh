@@ -2,28 +2,37 @@
 #*******************************************************************************
 # Author            : Indi
 # Github            : https://github.com/IndiSukka
-# Use               : Install bluetooth related packages
+# Use               : Install AUR packages
 #*******************************************************************************
 
 # Function to install the packages if not already installed
 func_install() {
-    if pacman -Qi "$1" &> /dev/null; then
-        tput setaf 2;echo "The package " "$1" "is already installed";echo ""
+    if pacman -Qi $1 &> /dev/null; then
+        tput setaf 2;echo "The package " $1 "is already installed";echo ""
         tput sgr0
 
     else
-        tput setaf 3;echo "Installing package: ""$1";tput sgr0
-        sudo pacman -S --noconfirm --needed "$1";
+        tput setaf 3;echo "Installing package: "$1;tput sgr0
+        sudo yay -S $1;
         echo ""
     fi
 }
 
 # List of programs to install
 list=(
-    bluez
-    bluez-libs
-    bluez-utils
-    blueman
+    appimagelauncher
+    downgrade
+    notesnook-bin
+    papirus-folders
+    peazip-qt-bin
+    pfetch-rs-bin
+    sfwbar
+    slimbookbattery
+    spicetify
+    spotify
+    sublime-text-4
+    thunar-extended
+    vscode
 )
 
 count=0
@@ -36,9 +45,3 @@ for name in "${list[@]}" ; do
 done
 
 tput setaf 4;echo "";echo "Packages have been installed";tput sgr0
-
-tput setaf 3;echo "Enabling bluetooth service";tput sgr0;
-
-sudo systemctl enable bluetooth.service
-
-tput setaf 2;echo "bluetooth service enabled";tput sgr0;
