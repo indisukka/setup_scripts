@@ -7,60 +7,74 @@
 
 # Function to install the packages if not already installed
 func_install() {
-    if pacman -Qi "$1" &> /dev/null; then
-        tput setaf 2;echo "The package " "$1" "is already installed";echo ""
-        tput sgr0
+	if pacman -Qi "$1" &>/dev/null; then
+		tput setaf 2
+		echo "The package " "$1" "is already installed"
+		echo ""
+		tput sgr0
 
-    else
-        tput setaf 3;echo "Installing package: ""$1";tput sgr0
-        sudo pacman -S --noconfirm --needed "$1";
-        echo ""
-    fi
+	else
+		tput setaf 3
+		echo "Installing package: ""$1"
+		tput sgr0
+		sudo pacman -S --noconfirm --needed "$1"
+		echo ""
+	fi
 }
 
 # List of programs to install
 list=(
-    age
-    blueman
-    bluez
-    bluez-libs
-    bluez-utils
-    chezmoi
-    git
-    grim
-    kitty
-    labwc
-    neovim
-    nwg-look
-    p7zip
-    pavucontrol
-    pcmanfm-gtk3
-    pipewire
-    pipewire-alsa
-    pipewire-jack
-    pipewire-pulse
-    sddm
-    waybar
-    wireplumber
-    wlogout
-    xfce4
-    lz4
-    firefox
-    gtklock
-    unrar
-    unzip
+	age
+	blueman
+	bluez
+	bluez-libs
+	bluez-utils
+	chezmoi
+	git
+	grim
+	kitty
+	labwc
+	most
+	nano
+	neovim
+	network-manager-applet
+	nwg-look
+	p7zip
+	pavucontrol
+	pcmanfm-gtk3
+	pipewire
+	pipewire-alsa
+	pipewire-jack
+	pipewire-pulse
+	sddm
+	waybar
+	wireplumber
+	wlogout
+	xfce4
+	lz4
+	firefox
+	gtklock
+	unrar
+	unzip
 )
 
 count=0
-for name in "${list[@]}" ; do
-    count=$((count+1))
-    tput setaf 6;
-    echo "Installing package no. $count :: " "$name";
-    tput sgr0;
-    func_install "$name"
+for name in "${list[@]}"; do
+	count=$((count + 1))
+	tput setaf 6
+	echo "Installing package no. $count :: " "$name"
+	tput sgr0
+	func_install "$name"
 done
 
-tput setaf 4;echo "";echo "Packages have been installed";tput sgr0
-tput setaf 3;echo "Enabling sddm service";tput sgr0;
+tput setaf 4
+echo ""
+echo "Packages have been installed"
+tput sgr0
+tput setaf 3
+echo "Enabling sddm service"
+tput sgr0
 sudo systemctl enable sddm.service
-tput setaf 2;echo "sddm service enabled";tput sgr0;
+tput setaf 2
+echo "sddm service enabled"
+tput sgr0
