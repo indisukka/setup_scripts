@@ -30,6 +30,7 @@ list=(
 	bitwarden
 	copyq
 	doas
+	deluge-gtk
 	eza
 	feh
 	fish
@@ -52,10 +53,12 @@ list=(
 	papirus-icon-theme
 	picard
 	proton-vpn-gtk-app
+	qbittorrent
 	ranger
 	ripgrep
 	rofi
 	samba
+	sayonara-player
 	slurp
 	starship
 	swaybg
@@ -79,7 +82,6 @@ list=(
 	xfce4-wavelan-plugin
 	xfce4-whiskermenu-plugin
 	yt-dlp
-
 )
 
 count=0
