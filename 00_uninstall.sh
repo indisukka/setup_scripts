@@ -1,7 +1,7 @@
 #!/bin/bash
 #*******************************************************************************
 # Author            : IndiSukka
-# Use               : Script to uninstall unwanted programs from base ArcoD install
+# Use               : Script to uninstall unwanted programs if present
 #*******************************************************************************
 
 # Function to install the packages if not already installed
@@ -24,7 +24,6 @@ list=(
 	btrfs-progs
 	nano
 	vim
-	ttf-opensans
 	xterm
 )
 

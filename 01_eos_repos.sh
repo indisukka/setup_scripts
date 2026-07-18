@@ -2,7 +2,7 @@
 #*******************************************************************************
 # Author            : Indi
 # Github            : https://github.com/IndiSukka
-# Use               : Install large non-essential packages from arch repos
+# Use               : Install endeavour-os packages
 #*******************************************************************************
 
 # Function to install the packages if not already installed
@@ -10,7 +10,7 @@ func_install() {
 	if pacman -Qi "$1" &>/dev/null; then
 		tput setaf 2
 		echo "The package " "$1" "is already installed"
-		echo ""
+		echo "****************************************"
 		tput sgr0
 
 	else
@@ -18,29 +18,28 @@ func_install() {
 		echo "Installing package: ""$1"
 		tput sgr0
 		sudo pacman -S --noconfirm --needed "$1"
-		echo ""
+		tput setaf 5
+		echo "****************************************"
+		tput setaf 0
 	fi
 }
+
 # List of programs to install
 list=(
-	0ad
-	chromium
-	discord
-	intellij-idea-community-edition
-	vivaldi
-	vivaldi-ffmpeg-codecs
+	downgrade
+	reflector-simple
+	yay
 )
 
-count=0
 for name in "${list[@]}"; do
-	count=$((count + 1))
-	tput setaf 6
-	echo "Installing package no. $count :: " "$name"
-	tput sgr0
 	func_install "$name"
 done
 
 tput setaf 4
 echo ""
 echo "Packages have been installed"
+echo ""
 tput sgr0
+
+# list packages installed from a repo
+# comm -12 (pacman -Qq | sort | psub) (pacman -Slq endeavouros | sort | psub)

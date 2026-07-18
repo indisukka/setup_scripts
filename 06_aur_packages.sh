@@ -25,31 +25,20 @@ func_install() {
 # List of programs to install
 list=(
 	appimagelauncher
-	downgrade
 	megasync-bin
-	notesnook-bin
-	papirus-folders
-	peazip-qt-bin
-	pfetch-rs-bin
 	sfwbar
 	slimbookbattery
-	spotify
-	spicetify-cli
-	sublime-text-4
-	vscode
-	zen-browser-bin
 )
 
-count=0
 for name in "${list[@]}"; do
-	count=$((count + 1))
-	tput setaf 6
-	echo "Installing package no. $count :: " "$name"
-	tput sgr0
 	func_install "$name"
 done
 
 tput setaf 4
 echo ""
 echo "Packages have been installed"
+echo ""
 tput sgr0
+
+# removed packages
+# vscode

@@ -2,7 +2,7 @@
 #*******************************************************************************
 # Author            : Indi
 # Github            : https://github.com/IndiSukka
-# Use               : Install critical packages
+# Use               : Install packages from chaotic-aur, assumes repo added
 #*******************************************************************************
 
 # Function to install the packages if not already installed
@@ -10,7 +10,7 @@ func_install() {
 	if pacman -Qi "$1" &>/dev/null; then
 		tput setaf 2
 		echo "The package " "$1" "is already installed"
-		echo ""
+		echo "****************************************"
 		tput sgr0
 
 	else
@@ -18,63 +18,32 @@ func_install() {
 		echo "Installing package: ""$1"
 		tput sgr0
 		sudo pacman -S --noconfirm --needed "$1"
-		echo ""
+		tput setaf 5
+		echo "****************************************"
+		tput setaf 0
 	fi
 }
 
 # List of programs to install
 list=(
-	age
-	blueman
-	bluez
-	bluez-libs
-	bluez-utils
-	chezmoi
-	git
-	grim
-	kitty
-	labwc
-	most
-	nano
-	neovim
-	network-manager-applet
-	nwg-look
-	p7zip
-	pavucontrol
-	pcmanfm-gtk3
-	pipewire
-	pipewire-alsa
-	pipewire-jack
-	pipewire-pulse
-	sddm
-	waybar
-	wireplumber
+	downgrade
+	kvantum-theme-orchis-git
+	papirus-folders
+	peazip
+	reflector-simple
+	sayonara-player
+	sublime-text-4
 	wlogout
-	xfce4
-	lz4
-	firefox
-	gtklock
-	unrar
-	unzip
+	yay
+	zen-browser-bin
 )
 
-count=0
 for name in "${list[@]}"; do
-	count=$((count + 1))
-	tput setaf 6
-	echo "Installing package no. $count :: " "$name"
-	tput sgr0
 	func_install "$name"
 done
 
 tput setaf 4
 echo ""
 echo "Packages have been installed"
-tput sgr0
-tput setaf 3
-echo "Enabling sddm service"
-tput sgr0
-sudo systemctl enable sddm.service
-tput setaf 2
-echo "sddm service enabled"
+echo ""
 tput sgr0

@@ -2,7 +2,7 @@
 #########################################################################################
 # Author            : Indi
 # Github            : https://github.com/IndiSukka
-# Use               : Installing qemu and virt manager
+# Use               : Setup virt manager
 #########################################################################################
 
 # Removing iptables
