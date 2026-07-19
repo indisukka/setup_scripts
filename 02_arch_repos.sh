@@ -33,8 +33,10 @@ list=(
 	bluez
 	bluez-libs
 	bluez-utils
+	brightnessctl
 	chezmoi
 	chromium
+	code
 	copyq
 	doas
 	downgrade
@@ -84,7 +86,9 @@ list=(
 	pipewire-pulse
 	proton-vpn-gtk-app
 	qbittorrent
+	qt5ct
 	qt5-wayland
+	qt6ct
 	qt6-wayland
 	ranger
 	reflector
@@ -93,6 +97,7 @@ list=(
 	rofi
 	samba
 	sayonara-player
+	sddm
 	shfmt
 	slurp
 	starship
