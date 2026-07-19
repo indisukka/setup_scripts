@@ -26,8 +26,7 @@ echo "Enabling services"
 tput sgr0
 
 sudo systemctl enable smb.service
-# no need of nmvb for now
-# sudo systemctl enable nmb.service
+sudo systemctl enable nmb.service
 
 tput setaf 4
 echo ""
